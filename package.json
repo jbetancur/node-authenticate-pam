@@ -1,22 +1,28 @@
 {
-  "name": "authenticate-pam",
-  "version": "v0.2.2",
-  "scripts": {
-    "preinstall": "node-gyp configure && node-gyp build",
-    "preuninstall": "rm -rf build/*"
-  },
-  "main": "build/Release/authenticate_pam.node",
-  "description": "Asynchronous PAM authentication for Node.JS",
-  "homepage": "https://github.com/RushPL/node-authenticate-pam",
-  "author": {
-    "name": "Damian Kaczmarek",
-    "email": "damian@codecharm.co.uk"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/RushPL/node-authenticate-pam.git"
-  },
-  "dependencies": {
-    "nan": "1.1.0"
-  }
+	"description": "Asynchronous PAM authentication for Node.JS",
+	"homepage": "https://github.com/jbetancur/node-authenticate-pam",
+	"author": {
+		"name": "Damian Kaczmarek",
+		"email": "damian@codecharm.co.uk"
+	},
+	"contributors": [{
+		"name": "John Betancur",
+		"email": "johnnyazee@gmail.com"
+	}],
+	"name": "authenticate-pam",
+	"version": "v0.3.0",
+	"dependencies": {
+    "nan": "~1.5.3",
+    "node-gyp": "1.0.3"
+	},
+	"scripts": {
+    "preinstall": "node-gyp configure clean && node-gyp configure && node-gyp build",
+    "preuninstall": "rm -rf build/*",
+    "postinstall": "if [[ `node -p process.platform` == 'darwin' ]]; then cp build/Release/authenticate_pam.node bin/darwin_x64; elif [[ `node -p process.platform` == 'linux' ]];then cp build/Release/authenticate_pam.node bin/linix_x64; else echo 'Could not match platform - defauling to Release build'; fi;",
+		"test": "test/test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jbetancur/node-authenticate-pam.git"
+	}
 }
