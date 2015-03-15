@@ -12,7 +12,7 @@
 	"name": "authenticate-pam",
 	"version": "v0.3.0",
 	"dependencies": {
-    "nan": "~1.5.3",
+    "nan": "1.7.0",
     "node-gyp": "1.0.3"
 	},
 	"scripts": {
