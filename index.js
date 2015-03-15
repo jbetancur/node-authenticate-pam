@@ -4,7 +4,7 @@ var authenticate_pam = null;
 if (process.platform === "linux" && process.arch === "x64") {
 	authenticate_pam = require('./bin/linux_x64/authenticate_pam');
 } else if (process.platform === "darwin" && process.arch === "x64") {
-	authenticate_pam = require('./bin/darwn_x64/authenticate_pam');
+	authenticate_pam = require('./bin/darwin_x64/authenticate_pam');
 } else {
 	// Load the new built binary for other platforms.
 	authenticate_pam = require('./build/Release/authenticate_pam');
