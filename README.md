@@ -50,7 +50,7 @@ pam.authenticate('rush', 'mysecretpassword', function(err) {
 }, {serviceName: 'myapp', remoteHost: 'localhost'});
 ```
 
-Installing PAM dependaecies
+Installing PAM dependencies
 -------------------
 For building on Linux you will need pam-devel:
 
