@@ -16,9 +16,9 @@
     "node-gyp": "1.0.3"
 	},
 	"scripts": {
-    "preinstall": "node-gyp configure clean && node-gyp configure && node-gyp build",
+    "preinstall": "npm update && node-gyp configure clean && node-gyp configure && node-gyp build",
     "preuninstall": "rm -rf build/*",
-    "postinstall": "if [[ `node -p process.platform` == 'darwin' ]]; then cp build/Release/authenticate_pam.node bin/darwin_x64; elif [[ `node -p process.platform` == 'linux' ]];then cp build/Release/authenticate_pam.node bin/linix_x64; else echo 'Could not match platform - defauling to Release build'; fi;",
+    "postinstall": "if [[ `node -p process.platform` == 'darwin' ]]; then cp build/Release/authenticate_pam.node bin/darwin_x64; elif [[ `node -p process.platform` == 'linux' ]];then cp build/Release/authenticate_pam.node bin/linix_x64; else echo 'Could not match platform - defaulting to Release directory'; fi;",
 		"test": "test/test.js"
 	},
 	"repository": {
