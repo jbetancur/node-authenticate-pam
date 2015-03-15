@@ -49,7 +49,22 @@ pam.authenticate('rush', 'mysecretpassword', function(err) {
     }
 }, {serviceName: 'myapp', remoteHost: 'localhost'});
 ```
-    
+
+Installing PAM Dependancies
+-------------------
+For building on Linux you will need pam-devel:
+
+RHEL/CENTOS
+```
+sudo yum install pam-devel -y
+```
+
+Debian/Ubuntu
+
+```
+sudo apt-get install libpam0g-dev
+```
+
 Install
 -------------------
 `npm install authenticate-pam`
